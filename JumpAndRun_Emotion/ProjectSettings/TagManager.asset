@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Death Zone
   - Gem
+  - Obstacle
   layers:
   - Default
   - TransparentFX
