@@ -5,6 +5,7 @@ using OpenCVForUnity.ImgprocModule;
 using OpenCVForUnity.UnityUtils;
 using OpenCVForUnity.UnityUtils.Helper;
 using OpenCVForUnityExample.DnnModel;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -323,6 +324,13 @@ namespace OpenCVForUnityExample
         {
             multiSource2MatHelper.requestedIsFrontFacing = !multiSource2MatHelper.requestedIsFrontFacing;
         }
+
+        public Mat infer(Mat frame)
+        {
+            throw new NotImplementedException();
+        }
+        
+
     }
 }
 
