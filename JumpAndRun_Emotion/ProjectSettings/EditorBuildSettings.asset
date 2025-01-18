@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AngryPhase.unity
     guid: 619ff4c5a288a924495479614c4b12bc
+  - enabled: 1
+    path: Assets/Scenes/FearPhase.unity
+    guid: a567cf9cfd013344d996cd7249349b43
   - enabled: 0
     path: Assets/OpenCVForUnity/Examples/OpenCVForUnityExample.unity
     guid: c1089b6c5cb5b0742be92732f5bdc172

@@ -1,15 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitchScript : MonoBehaviour
+public class PhaseSwitcher : MonoBehaviour
 {
     void Update()
     {
-        // Überprüfen, ob die Taste G gedrückt wurde
+        // Wechsel zur Happy-Phase
         if (Input.GetKeyDown(KeyCode.G))
         {
-            // Wechsel zur Szene "AngryPhase"
+            SceneManager.LoadScene("HappyPhase");
+        }
+        // Wechsel zur Angry-Phase
+        if (Input.GetKeyDown(KeyCode.H))
+        {
             SceneManager.LoadScene("AngryPhase");
+        }
+        // Wechsel zur Fear-Phase
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            SceneManager.LoadScene("FearPhase");
         }
     }
 }
