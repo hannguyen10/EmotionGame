@@ -1,33 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 10f;
+    private float speed = 9f;
     private float jumpingPower = 17f;
     private bool isFacingRight = true;
-    public GemManager gemMan;
-    
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    public GemManager gemMan;
     public Animator animator;
-
-    void Start()
-    {
-        // Initialisiere den Animator
-        animator = GetComponent<Animator>();
-    }
-
 
 
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -38,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            animator.SetBool("IsJumping", false);
         }
 
         Flip();
@@ -65,13 +58,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //checks the tag "Gem"
-    private void OnTriggerEnter2D(Collider2D  other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Gem")){
+        if (other.gameObject.CompareTag("Gem"))
+        {
             Destroy(other.gameObject);
             gemMan.gemCount++;
         }
-      
+
     }
 
 }
