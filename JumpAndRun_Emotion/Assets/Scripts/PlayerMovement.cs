@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// basiert auf dieses Video: https://www.youtube.com/watch?v=K1xZ-rycYY8&t=220s und wurde entsprechend angepasst
+
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
